@@ -9,7 +9,7 @@ spec:
     - missingkey=error
   generators:
     - git:
-        repoURL: https://github.com/wesleyfebarretos/gitops.git
+        repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         revision: main
         files:
           - path: clients/*/*
@@ -22,7 +22,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/wesleyfebarretos/gitops.git
+        repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         targetRevision: main
         path: helm/charts/golang-api
         helm:

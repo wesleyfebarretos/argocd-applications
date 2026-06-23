@@ -9,7 +9,7 @@
   "name": "node-api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wesleyfebarretos/gitops"
+    "url": "https://github.com/wesleyfebarretos/argocd-applications"
   },
   "scripts": {
     "start": "node index.js",
