@@ -20,7 +20,7 @@ spec:
         app.kubernetes.io/name: golang-api
         client: "{{ index .path.segments 1 }}"
     spec:
-      project: default
+      project: applications
       source:
         repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         targetRevision: main
