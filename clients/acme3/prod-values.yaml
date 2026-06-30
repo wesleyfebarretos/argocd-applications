@@ -3,7 +3,7 @@ nameOverride: acme3-prod
 fullnameOverride: acme3-prod
 image:
   repository: golang-api
-  tag: 568a59b
+  tag: fd20be3
   pullPolicy: IfNotPresent
 autoscaling:
   enabled: true
