@@ -8,11 +8,11 @@ function json(res, status, body) {
 }
 
 const server = http.createServer((req, res) => {
-  if (req.method === "GET" && req.url === "/healthz/live") {
+  if (req.method === "GET" && req.url === "/health/livez") {
     json(res, 200, { status: "live" });
     return;
   }
-  if (req.method === "GET" && req.url === "/healthz/ready") {
+  if (req.method === "GET" && req.url === "/health/readyz") {
     json(res, 200, { status: "ready" });
     return;
   }

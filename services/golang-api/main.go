@@ -15,10 +15,10 @@ func writeStatus(w http.ResponseWriter, status string) {
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /healthz/live", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("GET /health/livez", func(w http.ResponseWriter, r *http.Request) {
 		writeStatus(w, "live")
 	})
-	mux.HandleFunc("GET /healthz/ready", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("GET /health/readyz", func(w http.ResponseWriter, r *http.Request) {
 		writeStatus(w, "ready")
 	})
 
