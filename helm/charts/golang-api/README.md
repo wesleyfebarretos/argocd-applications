@@ -51,7 +51,7 @@ A Helm chart for Kubernetes
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | startupProbe.failureThreshold | int | `2` |  |
-| startupProbe.httpGet.path | string | `"/health/readyzz"` |  |
+| startupProbe.httpGet.path | string | `"/health/readyz"` |  |
 | startupProbe.httpGet.port | string | `"http"` |  |
 | startupProbe.periodSeconds | int | `5` |  |
 | startupProbe.timeoutSeconds | int | `3` |  |
