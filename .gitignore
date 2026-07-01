@@ -48,3 +48,5 @@ reposerver/repository/testdata/**/.argocd-helm-dep-up
 # But not ignore charts inside helm
 !**/helm/charts/
 !**/helm/charts/**
+
+IDEAS.md
