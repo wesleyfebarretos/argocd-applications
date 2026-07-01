@@ -140,7 +140,7 @@ readinessProbe:
   timeoutSeconds: 3
 startupProbe:
   httpGet:
-    path: /health/readyz
+    path: /health/readyzz
     port: http
   periodSeconds: 5
   failureThreshold: 2
