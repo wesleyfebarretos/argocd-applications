@@ -12,23 +12,18 @@ spec:
         repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         revision: main
         files:
-          - path: clients/*/*
+          - path: clients/*/*/overlays/*/values.yaml
   template:
     metadata:
-      name: "{{ .namespace }}-golang-api"
+      name: "{{ .namespace }}"
       labels:
-        app.kubernetes.io/name: golang-api
-        client: "{{ index .path.segments 1 }}"
+        app.kubernetes.io/name: "{{ .path.segments 2 }}"
+        client: "{{ .clientSlug }}"
     spec:
       project: applications
       source:
         repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         targetRevision: main
-        path: helm/charts/golang-api
-        helm:
-          releaseName: "{{ .namespace }}"
-          valueFiles:
-            - ../../../{{ .path.path }}/{{ .path.filename }}
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{ .namespace }}"
