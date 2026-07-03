@@ -24,6 +24,7 @@ spec:
       source:
         repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         targetRevision: main
+        path: "{{ .path.path }}"
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{ .namespace }}"
