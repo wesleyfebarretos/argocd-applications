@@ -17,7 +17,7 @@ spec:
     metadata:
       name: "{{ .namespace }}"
       labels:
-        app.kubernetes.io/name: "{{ .path.segments 2 }}"
+        app.kubernetes.io/name: "{{ index .path.segments 2 }}"
         client: "{{ .clientSlug }}"
     spec:
       project: applications
