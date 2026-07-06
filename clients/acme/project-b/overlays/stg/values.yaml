@@ -1,0 +1,9 @@
+namespace: acme-project-b-stg
+clientSlug: acme
+nameOverride: acme-project-b-stg
+fullnameOverride: acme-project-b-stg
+replicaCount: 2
+image:
+  repository: golang-api
+  tag: latest
+  pullPolicy: Never

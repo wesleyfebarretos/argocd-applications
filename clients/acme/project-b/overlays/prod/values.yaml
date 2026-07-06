@@ -1,0 +1,14 @@
+namespace: acme-project-b-prod
+clientSlug: acme
+nameOverride: acme-project-b-prod
+fullnameOverride: acme-project-b-prod
+image:
+  repository: golang-api
+  tag: fd20be3
+  pullPolicy: Never
+autoscaling:
+  enabled: true
+  minReplicas: 4
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 65
+  targetMemoryUtilizationPercentage: 60
