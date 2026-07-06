@@ -1,7 +1,5 @@
 namespace: acme-project-b-prod
 clientSlug: acme
-nameOverride: acme-project-b-prod
-fullnameOverride: acme-project-b-prod
 image:
   repository: golang-api
   tag: fd20be3
