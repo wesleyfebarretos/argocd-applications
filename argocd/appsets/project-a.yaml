@@ -12,7 +12,7 @@ spec:
         repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         revision: main
         files:
-          - path: clients/*/*/overlays/*/values.yaml
+          - path: clients/*/*/overlays/*/kustomization.yaml
   template:
     metadata:
       name: "{{ .namespace }}"
