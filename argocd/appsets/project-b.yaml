@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: project-a
+  namespace: applications
+spec:
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+  generators:
+    - git:
+        repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
+        revision: main
+        files:
+          - path: clients/*/project-b/overlays/*/values.yaml
+  template:
+    metadata:
+      name: "{{ .namespace }}"
+      labels:
+        app.kubernetes.io/name: "{{ index .path.segments 2 }}"
+        client: "{{ .clientSlug }}"
+    spec:
+      project: applications
+      source:
+        repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
+        targetRevision: main
+        path: "{{ .path.path }}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ .namespace }}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - ServerSideApply=true
+          - ApplyOutOfSyncOnly=true
