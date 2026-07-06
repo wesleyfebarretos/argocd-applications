@@ -1,6 +1,5 @@
 namespace: acme-project-b-dev
 clientSlug: acme
-nameOverride: acme-project-b-dev
 replicaCount: 1
 image:
   repository: golang-api
