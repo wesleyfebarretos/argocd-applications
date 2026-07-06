@@ -1,4 +1,4 @@
-namespace: argocd
+namespace: acme-project-b-dev
 clientSlug: acme
 nameOverride: acme-project-b-dev
 fullnameOverride: acme-project-b-dev
