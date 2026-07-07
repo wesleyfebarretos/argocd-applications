@@ -1,9 +1,6 @@
 namespace: acme-project-a-prod
-clientSlug: acme
 image:
-  repository: golang-api
   tag: fd20be3
-  pullPolicy: Never
 autoscaling:
   enabled: true
   minReplicas: 4

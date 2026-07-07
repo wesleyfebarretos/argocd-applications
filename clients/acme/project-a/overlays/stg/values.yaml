@@ -1,7 +1,4 @@
 namespace: acme-project-a-stg
-clientSlug: acme
 replicaCount: 2
 image:
-  repository: golang-api
   tag: latest
-  pullPolicy: Never
