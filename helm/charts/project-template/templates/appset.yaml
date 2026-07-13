@@ -10,7 +10,7 @@ spec:
         repoURL: https://github.com/wesleyfebarretos/argocd-applications.git
         revision: main
         directories:
-          - clients/{{ include "project-template.client" . }}/{{ include "project-template.project" . }}/overlays/*
+          - path: clients/{{ include "project-template.client" . }}/{{ include "project-template.project" . }}/overlays/*
   template:
     metadata:
       name: {{ include "project-template.namespace" . }}
