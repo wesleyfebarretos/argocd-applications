@@ -11,6 +11,8 @@ spec:
   description: "Project for {{ include "project-template.namespace" . }} namespace"
   sourceRepos:
     - https://github.com/wesleyfebarretos/argocd-applications.git
+  sourceNamespaces:
+    - {{ include "project-template.namespace" . }}
   destinations:
     - namespace: {{ include "project-template.namespace" . }}
   {{- with $appProject }}
