@@ -1,8 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
-  - ../../base
+helmGlobals:
+  chartHome: ../../../../helm/charts
 helmCharts:
   - name: golang-api
+    releaseName: golang-api
+    valuesFile: ../../base/values.yaml
     additionalValuesFiles:
       - values.yaml

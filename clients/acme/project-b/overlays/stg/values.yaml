@@ -1,4 +1,0 @@
-namespace: acme-project-b-stg
-replicaCount: 2
-image:
-  tag: latest
