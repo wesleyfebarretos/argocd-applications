@@ -68,6 +68,7 @@ Default resources limits and requests
 {{- $defaultResources := dict
   "requests" (dict "cpu" "100m" "memory" "128Mi")
   "limits" (dict "cpu" "500m" "memory" "512Mi")
-}}
-{{- toYaml (mergeOverwrite $defaultResources (.Values.resources | default dict)) -}}
+-}}
+{{- $resources := mergeOverwrite (deepCopy $defaultResources) (.Values.resources | default dict) -}}
+{{- toYaml $resources -}}
 {{- end }}
