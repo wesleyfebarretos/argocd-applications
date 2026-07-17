@@ -9,10 +9,6 @@ spec:
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   progressDeadlineSeconds: 300
-  {{- with .Values.strategy }}
-  strategy:
-    {{- toYaml . | nindent 6 }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "golang-api.selectorLabels" . | nindent 6 }}
