@@ -57,7 +57,7 @@ spec:
           startupProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          resources: {{ .Values.resources }}
+          resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
