@@ -2,7 +2,7 @@ image:
   tag: fd20be3
 autoscaling:
   enabled: true
-  minReplicas: 4
+  minReplicas: 2
   maxReplicas: 10
   targetCPUUtilizationPercentage: 65
   targetMemoryUtilizationPercentage: 60
