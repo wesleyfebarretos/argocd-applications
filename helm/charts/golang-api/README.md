@@ -58,6 +58,9 @@ A Helm chart for Kubernetes
 | startupProbe.httpGet.port | string | `"http"` |  |
 | startupProbe.periodSeconds | int | `5` |  |
 | startupProbe.timeoutSeconds | int | `3` |  |
+| strategy.rollingUpdate.maxSurge | int | `0` |  |
+| strategy.rollingUpdate.maxUnavailable | int | `1` |  |
+| strategy.type | string | `"RollingUpdate"` |  |
 | tolerations | list | `[]` |  |
 | volumeMounts | list | `[]` |  |
 | volumes | list | `[]` |  |
