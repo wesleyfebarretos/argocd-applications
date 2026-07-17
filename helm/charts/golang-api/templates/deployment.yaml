@@ -57,8 +57,7 @@ spec:
           startupProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          resources:
-            {{- include "golang-api.resources" . | nindent 12}}
+          resources: {{ .Values.resources }}
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}

@@ -60,15 +60,3 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
-
-{{/*
-Default resources limits and requests
-*/}}
-{{- define "golang-api.resources" -}}
-{{- $defaultResources := dict
-  "requests" (dict "cpu" "100m" "memory" "128Mi")
-  "limits" (dict "cpu" "500m" "memory" "512Mi")
--}}
-{{- $resources := mergeOverwrite (deepCopy $defaultResources) (.Values.resources | default dict) -}}
-{{- toYaml $resources -}}
-{{- end }}
