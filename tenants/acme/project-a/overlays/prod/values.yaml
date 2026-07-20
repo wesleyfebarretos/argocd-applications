@@ -6,3 +6,5 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 65
   targetMemoryUtilizationPercentage: 60
+podLabels:
+  environment: prod
