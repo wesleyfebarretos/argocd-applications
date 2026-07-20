@@ -40,6 +40,7 @@ helm.sh/chart: {{ include "golang-api.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/component: backend
 {{- end }}
 
 {{/*
