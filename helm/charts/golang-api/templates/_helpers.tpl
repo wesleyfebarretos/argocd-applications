@@ -36,9 +36,7 @@ Common labels
 {{- define "golang-api.labels" -}}
 helm.sh/chart: {{ include "golang-api.chart" . }}
 {{ include "golang-api.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Values.image.tag | quote }}
-{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/component: backend
 {{- end }}
