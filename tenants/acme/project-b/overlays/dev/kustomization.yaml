@@ -8,3 +8,8 @@ helmCharts:
     valuesFile: ../../base/values.yaml
     additionalValuesFiles:
       - values.yaml
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: project-b
+      environment: dev
+      tenant: acme
