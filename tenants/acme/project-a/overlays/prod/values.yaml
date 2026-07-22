@@ -1,12 +1,11 @@
-golang-api:
+enabled: true
+image:
+  tag: fd20be3
+autoscaling:
   enabled: true
-  image:
-    tag: fd20be3
-  autoscaling:
-    enabled: true
-    minReplicas: 2
-    maxReplicas: 10
-    targetCPUUtilizationPercentage: 65
-    targetMemoryUtilizationPercentage: 60
-  podLabels:
-    environment: prod
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 65
+  targetMemoryUtilizationPercentage: 60
+podLabels:
+  environment: prod
