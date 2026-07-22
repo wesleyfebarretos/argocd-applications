@@ -1,13 +1,14 @@
-image:
-  repository: golang-api
-  pullPolicy: Never
-resources:
-  requests:
-    cpu: 100m
-    memory: 128Mi
-  limits:
-    cpu: 100m
-    memory: 128Mi
-podLabels:
-  app.kubernetes.io/part-of: project-a
-  tenant: acme
+golang-api:
+  image:
+    repository: golang-api
+    pullPolicy: Never
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+  podLabels:
+    app.kubernetes.io/part-of: project-a
+    tenant: acme
