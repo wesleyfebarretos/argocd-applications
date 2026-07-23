@@ -1,2 +1,3 @@
 golang-api:
   enabled: true
+  fullnameOverride: project-a
