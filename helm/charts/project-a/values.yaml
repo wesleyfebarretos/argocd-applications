@@ -1,6 +1,3 @@
 golang-api:
   enabled: true
   fullnameOverride: golang-api
-
-cloudnative-pg:
-  enabled: true
