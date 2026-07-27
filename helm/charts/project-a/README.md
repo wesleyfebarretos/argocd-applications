@@ -9,11 +9,13 @@ Project A Umbrella Chart
 | Repository | Name | Version |
 |------------|------|---------|
 | file://../golang-api | golang-api | 1.0.0 |
+| https://cloudnative-pg.github.io/charts | cloudnative-pg | 0.29.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| cloudnative-pg.enabled | bool | `true` |  |
 | golang-api.enabled | bool | `true` |  |
 | golang-api.fullnameOverride | string | `"golang-api"` |  |
 
