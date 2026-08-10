@@ -14,6 +14,9 @@ Project A Umbrella Chart
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| cnpg.instances | int | `1` |  |
+| cnpg.major | int | `18` |  |
+| cnpg.storage.size | string | `"1Gi"` |  |
 | golang-api.enabled | bool | `true` |  |
 | golang-api.fullnameOverride | string | `"golang-api"` |  |
 
