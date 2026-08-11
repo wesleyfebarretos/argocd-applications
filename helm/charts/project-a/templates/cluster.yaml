@@ -3,11 +3,14 @@ kind: Cluster
 metadata:
   name: project-a-db
 spec:
-  instances: {{ .Values.cnpg.instances }}
+  instances: {{ .Values.cnpg.cluster.instances }}
+  postgresql:
+    parameters:
+      shared_buffers: "256MB"
+  resources: {{ toYaml .Values.cnpg.cluster.resources | nindent 4 }}
   imageCatalogRef:
     apiGroup: postgresql.cnpg.io
     kind: ClusterImageCatalog
     name: postgresql-minimal-trixie
-    major: {{ .Values.cnpg.major }}
-  storage:
-    size: {{ .Values.cnpg.storage.size }}
+    major: {{ .Values.cnpg.cluster.major }}
+  storage: {{ toYaml .Values.cnpg.cluster.storage | nindent 4 }}

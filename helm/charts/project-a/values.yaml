@@ -3,7 +3,15 @@ golang-api:
   fullnameOverride: golang-api
 
 cnpg:
-  instances: 1
-  major: 18
-  storage:
-    size: 1Gi
+  cluster:
+    instances: 1
+    major: 18
+    storage:
+      size: 1Gi
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: "1"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
