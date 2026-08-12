@@ -16,10 +16,10 @@ Project A Umbrella Chart
 |-----|------|---------|-------------|
 | cnpg.cluster.instances | int | `1` |  |
 | cnpg.cluster.major | int | `18` |  |
-| cnpg.cluster.resources.limits.cpu | string | `"1"` |  |
-| cnpg.cluster.resources.limits.memory | string | `"1Gi"` |  |
-| cnpg.cluster.resources.requests.cpu | string | `"1"` |  |
-| cnpg.cluster.resources.requests.memory | string | `"1Gi"` |  |
+| cnpg.cluster.resources.limits.cpu | string | `"100m"` |  |
+| cnpg.cluster.resources.limits.memory | string | `"128Mi"` |  |
+| cnpg.cluster.resources.requests.cpu | string | `"50m"` |  |
+| cnpg.cluster.resources.requests.memory | string | `"32Mi"` |  |
 | cnpg.cluster.storage.size | string | `"1Gi"` |  |
 | golang-api.enabled | bool | `true` |  |
 | golang-api.fullnameOverride | string | `"golang-api"` |  |
