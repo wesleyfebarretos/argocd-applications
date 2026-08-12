@@ -4,6 +4,10 @@ metadata:
   name: project-a-db
 spec:
   instances: {{ .Values.cnpg.cluster.instances }}
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
   postgresql:
     parameters:
       shared_buffers: "256MB"
