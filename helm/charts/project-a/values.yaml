@@ -6,6 +6,9 @@ cnpg:
   cluster:
     instances: 1
     major: 18
+    postgresql:
+      parameters:
+        shared_buffers: "8MB"
     storage:
       size: 1Gi
     resources:

@@ -16,6 +16,7 @@ Project A Umbrella Chart
 |-----|------|---------|-------------|
 | cnpg.cluster.instances | int | `1` |  |
 | cnpg.cluster.major | int | `18` |  |
+| cnpg.cluster.postgresql.parameters.shared_buffers | string | `"8MB"` |  |
 | cnpg.cluster.resources.limits.cpu | string | `"100m"` |  |
 | cnpg.cluster.resources.limits.memory | string | `"128Mi"` |  |
 | cnpg.cluster.resources.requests.cpu | string | `"50m"` |  |

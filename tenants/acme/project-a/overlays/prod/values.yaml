@@ -15,6 +15,9 @@ cnpg:
     instances: 3
     storage:
       size: 4Gi
+    postgresql:
+      parameters:
+        shared_buffers: "68MB"
     resources:
       requests:
         cpu: "200m"
