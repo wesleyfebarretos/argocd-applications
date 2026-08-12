@@ -10,3 +10,6 @@ golang-api:
     targetMemoryUtilizationPercentage: 60
   podLabels:
     environment: prod
+cnpg:
+  cluster:
+    instances: 3
