@@ -6,6 +6,9 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
+	"time"
 
 	"github.com/wesleyfebarretos/argocd-applications/internal/config"
 	"github.com/wesleyfebarretos/argocd-applications/internal/database"
@@ -25,13 +28,16 @@ func writeError(w http.ResponseWriter, status int, message string) {
 
 func main() {
 	config.Init()
-
 	pool, err := database.NewPostgres(context.Background())
 	if err != nil {
-		log.Fatalf(err.Error())
+		log.Fatal(err.Error())
 	}
 	log.Println("database connected")
-	defer pool.Close()
+	defer func() {
+		log.Println("closing database pool...")
+		pool.Close()
+		log.Println("database pool closed")
+	}()
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /health/livez", func(w http.ResponseWriter, r *http.Request) {
@@ -42,7 +48,6 @@ func main() {
 			writeError(w, http.StatusServiceUnavailable, "database not ready")
 			return
 		}
-
 		writeStatus(w, "ready")
 	})
 
@@ -50,10 +55,27 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-
 	addr := ":" + port
-	log.Printf("listening on %s", addr)
-	if err := http.ListenAndServe(addr, mux); err != nil {
-		log.Fatal(err)
+
+	srv := &http.Server{Addr: addr, Handler: mux}
+
+	go func() {
+		log.Printf("listening on %s", addr)
+		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Fatal(err)
+		}
+	}()
+
+	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGTERM, syscall.SIGINT)
+	defer stop()
+	<-ctx.Done()
+
+	log.Println("shutting down gracefully...")
+
+	shutdownCtx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	if err := srv.Shutdown(shutdownCtx); err != nil {
+		log.Printf("http shutdown error: %v", err)
 	}
 }
