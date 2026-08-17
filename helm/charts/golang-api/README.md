@@ -47,7 +47,7 @@ A Helm chart for Kubernetes
 | resources.requests.cpu | string | `"100m"` |  |
 | resources.requests.memory | string | `"128Mi"` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `8080` |  |
+| service.port | int | `8081` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `true` |  |
