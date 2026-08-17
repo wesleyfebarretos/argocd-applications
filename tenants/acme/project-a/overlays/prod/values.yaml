@@ -1,7 +1,7 @@
 golang-api:
   enabled: true
   image:
-    tag: fd20be3
+    tag: 1936b47
   autoscaling:
     enabled: true
     minReplicas: 2
