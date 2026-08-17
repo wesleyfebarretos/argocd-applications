@@ -23,6 +23,9 @@ Project A Umbrella Chart
 | cnpg.cluster.resources.requests.memory | string | `"32Mi"` |  |
 | cnpg.cluster.storage.size | string | `"1Gi"` |  |
 | golang-api.enabled | bool | `true` |  |
+| golang-api.env[0].name | string | `"DB_URI"` |  |
+| golang-api.env[0].valueFrom.secretKeyRef.key | string | `"uri"` |  |
+| golang-api.env[0].valueFrom.secretKeyRef.name | string | `"project-a-db-app"` |  |
 | golang-api.fullnameOverride | string | `"golang-api"` |  |
 
 ----------------------------------------------

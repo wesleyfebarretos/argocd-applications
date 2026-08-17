@@ -1,6 +1,12 @@
 golang-api:
   enabled: true
   fullnameOverride: golang-api
+  env:
+    - name: DB_URI
+      valueFrom:
+        secretKeyRef:
+          name: project-a-db-app
+          key: uri
 
 cnpg:
   cluster:
