@@ -19,13 +19,6 @@ A Helm chart for Kubernetes
 | image.repository | string | `"nginx"` |  |
 | image.tag | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.className | string | `""` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.hosts[0].paths[0].path | string | `"/"` |  |
-| ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
-| ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `2` |  |
 | livenessProbe.httpGet.path | string | `"/health/livez"` |  |
 | livenessProbe.httpGet.port | string | `"http"` |  |

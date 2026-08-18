@@ -10,6 +10,21 @@ golang-api:
     targetMemoryUtilizationPercentage: 60
   podLabels:
     environment: prod
+  httpRoute:
+    enabled: true
+    annotations: {}
+    parentRefs:
+      - group: gateway.networking.k8s.io
+        kind: Gateway
+        name: platform
+        namespace: envoy-gateway-system
+        sectionName: https
+    hostnames: [acme.project-a.internal]
+    rules:
+      - matches:
+          - path:
+              type: PathPrefix
+              value: /golang-api
 cnpg:
   cluster:
     instances: 3
