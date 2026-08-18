@@ -25,6 +25,12 @@ golang-api:
           - path:
               type: PathPrefix
               value: /golang-api
+        filters:
+          - type: URLRewrite
+            urlRewrite:
+              path:
+                type: ReplacePrefixMatch
+                replacePrefixMatch: /
 cnpg:
   cluster:
     instances: 3
