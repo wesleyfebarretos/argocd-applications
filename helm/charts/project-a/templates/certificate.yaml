@@ -10,8 +10,8 @@ spec:
     name: platform-selfsigned
   dnsNames:
     - {{ required "certificate.domain is required when certificate is enabled" .Values.certificate.domain }}
-    {{- range .Values.certificate.additionalHosts -}}
-    - {{ . }}
+    {{- range .Values.certificate.additionalHosts }}
+    - {{ . |  quote }}
     {{- end -}}
   privateKey:
     algorithm: ECDSA
