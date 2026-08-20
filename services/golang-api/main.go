@@ -40,10 +40,10 @@ func main() {
 	}()
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /health/livez", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("GET /livez", func(w http.ResponseWriter, r *http.Request) {
 		writeStatus(w, "live")
 	})
-	mux.HandleFunc("GET /health/readyz", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("GET /readyz", func(w http.ResponseWriter, r *http.Request) {
 		if err := pool.Ping(r.Context()); err != nil {
 			writeError(w, http.StatusServiceUnavailable, "database not ready")
 			return

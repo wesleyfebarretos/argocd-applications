@@ -4,7 +4,7 @@ certificate:
 golang-api:
   enabled: true
   image:
-    tag: 10fd14c
+    tag: 08e9d49
   autoscaling:
     enabled: true
     minReplicas: 2

@@ -5,9 +5,9 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
-        if self.path == "/health/livez":
+        if self.path == "/livez":
             self._respond(200, {"status": "live"})
-        elif self.path == "/health/readyz":
+        elif self.path == "/readyz":
             self._respond(200, {"status": "ready"})
         else:
             self._respond(404, {"error": "not found"})

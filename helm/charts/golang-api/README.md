@@ -20,7 +20,7 @@ A Helm chart for Kubernetes
 | image.tag | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `2` |  |
-| livenessProbe.httpGet.path | string | `"/health/livez"` |  |
+| livenessProbe.httpGet.path | string | `"/livez"` |  |
 | livenessProbe.httpGet.port | string | `"http"` |  |
 | livenessProbe.periodSeconds | int | `10` |  |
 | livenessProbe.timeoutSeconds | int | `2` |  |
@@ -30,7 +30,7 @@ A Helm chart for Kubernetes
 | podLabels | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | readinessProbe.failureThreshold | int | `3` |  |
-| readinessProbe.httpGet.path | string | `"/health/readyz"` |  |
+| readinessProbe.httpGet.path | string | `"/readyz"` |  |
 | readinessProbe.httpGet.port | string | `"http"` |  |
 | readinessProbe.periodSeconds | int | `10` |  |
 | readinessProbe.timeoutSeconds | int | `3` |  |
@@ -47,7 +47,7 @@ A Helm chart for Kubernetes
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | startupProbe.failureThreshold | int | `2` |  |
-| startupProbe.httpGet.path | string | `"/health/readyz"` |  |
+| startupProbe.httpGet.path | string | `"/readyz"` |  |
 | startupProbe.httpGet.port | string | `"http"` |  |
 | startupProbe.periodSeconds | int | `5` |  |
 | startupProbe.timeoutSeconds | int | `3` |  |
