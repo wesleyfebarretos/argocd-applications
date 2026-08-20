@@ -6,7 +6,6 @@ certificate:
 
 golang-api:
   enabled: true
-  fullnameOverride: golang-api
   env:
     - name: DB_URI
       valueFrom:
