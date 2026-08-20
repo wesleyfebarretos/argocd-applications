@@ -1,3 +1,9 @@
+certificate:
+  enabled: false
+  domain: ""
+  # -- Certificate Subject Alternate Names (SANs)
+  additionalHosts: []
+
 golang-api:
   enabled: true
   fullnameOverride: golang-api

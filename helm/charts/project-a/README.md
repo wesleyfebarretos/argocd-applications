@@ -14,6 +14,9 @@ Project A Umbrella Chart
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| certificate.additionalHosts | list | `[]` | Certificate Subject Alternate Names (SANs) |
+| certificate.domain | string | `""` |  |
+| certificate.enabled | bool | `false` |  |
 | cnpg.cluster.instances | int | `1` |  |
 | cnpg.cluster.major | int | `18` |  |
 | cnpg.cluster.postgresql.parameters.shared_buffers | string | `"8MB"` |  |

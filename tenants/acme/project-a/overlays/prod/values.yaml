@@ -1,3 +1,6 @@
+certificate:
+  enabled: true
+  domain: project-a.acme.internal
 golang-api:
   enabled: true
   image:
@@ -19,7 +22,7 @@ golang-api:
         name: platform
         namespace: envoy-gateway-system
         sectionName: https
-    hostnames: [acme.project-a.internal]
+    hostnames: [project-a.acme.internal]
     rules:
       - matches:
           - path:
