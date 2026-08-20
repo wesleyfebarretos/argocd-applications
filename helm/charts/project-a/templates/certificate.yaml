@@ -12,7 +12,7 @@ spec:
     - {{ required "certificate.domain is required when certificate is enabled" .Values.certificate.domain }}
     {{- range .Values.certificate.additionalHosts }}
     - {{ . |  quote }}
-    {{- end -}}
+    {{- end }}
   privateKey:
     algorithm: ECDSA
     size: 256
