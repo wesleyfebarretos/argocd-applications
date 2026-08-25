@@ -4,6 +4,12 @@ certificate:
   # -- Certificate Subject Alternate Names (SANs)
   additionalHosts: []
 
+migration:
+  enabled: false
+  image:
+    repository: ""
+    tag: ""
+
 golang-api:
   enabled: true
   fullnameOverride: golang-api

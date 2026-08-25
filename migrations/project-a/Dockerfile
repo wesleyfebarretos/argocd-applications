@@ -1,0 +1,5 @@
+FROM migrate/migrate:v4.19.1
+
+WORKDIR /migrations
+
+COPY migrations/ .

@@ -1,0 +1,23 @@
+{{- if .Values.migration.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: project-a-migration-job-{{ .Values.migration.image.tag }}
+spec:
+  template:
+    spec:
+      containers:
+      - name: migration-job
+        image: {{ .Values.migration.image.repository }}:{{ .Values.migration.image.tag }}
+        command: ["/bin/sh", "-c"]
+        args:
+          - migrate -verbose -source file://migrations -database ${DB_URI} up
+        env:
+          - name: DB_URI
+            valueFrom:
+              secretKeyRef:
+                name: project-a-db-app
+                key: uri
+      restartPolicy: Never
+  backoffLimit: 4
+{{- end }}
