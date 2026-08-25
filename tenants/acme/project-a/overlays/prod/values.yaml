@@ -1,6 +1,11 @@
 certificate:
   enabled: true
   domain: project-a.acme.internal
+migration:
+  enabled: true
+  image:
+    repository: project-a-migrations
+    tag: 4327fe6
 golang-api:
   enabled: true
   image:
