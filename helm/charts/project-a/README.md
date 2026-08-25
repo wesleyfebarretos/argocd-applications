@@ -31,6 +31,7 @@ Project A Umbrella Chart
 | golang-api.env[0].valueFrom.secretKeyRef.name | string | `"project-a-db-app"` |  |
 | golang-api.fullnameOverride | string | `"golang-api"` |  |
 | migration.enabled | bool | `false` |  |
+| migration.image.pullPolicy | string | `"IfNotPresent"` |  |
 | migration.image.repository | string | `""` |  |
 | migration.image.tag | string | `""` |  |
 

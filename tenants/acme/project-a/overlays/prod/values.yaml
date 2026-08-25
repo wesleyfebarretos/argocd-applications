@@ -6,6 +6,7 @@ migration:
   image:
     repository: project-a-migrations
     tag: 4327fe6
+    pullPolicy: "Never"
 golang-api:
   enabled: true
   image:
