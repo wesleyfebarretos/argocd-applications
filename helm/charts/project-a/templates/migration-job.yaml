@@ -13,7 +13,7 @@ spec:
         resources: {{- toYaml .Values.migration.resources | nindent 10 }}
         command: ["/bin/sh", "-c"]
         args:
-          - migrate -verbose -source file://migrations -database ${DB_URI} up
+          - migrate -verbose -source file:///migrations -database ${DB_URI} up
         env:
           - name: DB_URI
             valueFrom:
