@@ -5,7 +5,7 @@ migration:
   enabled: true
   image:
     repository: project-a-migrations
-    tag: 13d24e3
+    tag: 03bed53
     pullPolicy: "Never"
 golang-api:
   enabled: true
