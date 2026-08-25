@@ -10,6 +10,7 @@ spec:
       - name: migration-job
         image: {{ .Values.migration.image.repository }}:{{ .Values.migration.image.tag }}
         imagePullPolicy: {{ .Values.migration.image.pullPolicy }}
+        resources: {{- toYaml .Values.migration.resources | nindent 12 }}
         command: ["/bin/sh", "-c"]
         args:
           - migrate -verbose -source file://migrations -database ${DB_URI} up
