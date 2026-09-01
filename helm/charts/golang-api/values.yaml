@@ -144,9 +144,9 @@ volumes:
     projected:
       sources:
         - serviceAccountToken:
-          path: token
-          expirationSeconds: 7200
-          audience: rustfs
+            path: token
+            expirationSeconds: 7200
+            audience: rustfs
 
 
 volumeMounts:
