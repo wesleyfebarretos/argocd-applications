@@ -57,7 +57,7 @@ A Helm chart for Kubernetes
 | volumeMounts[0].readOnly | bool | `true` |  |
 | volumes[0].name | string | `"rustfs-oidc-token"` |  |
 | volumes[0].projected.sources[0].audience | string | `"rustfs"` |  |
-| volumes[0].projected.sources[0].expirationSeconds | int | `3600` |  |
+| volumes[0].projected.sources[0].expirationSeconds | int | `7200` |  |
 | volumes[0].projected.sources[0].path | string | `"token"` |  |
 | volumes[0].projected.sources[0].serviceAccountToken | string | `nil` |  |
 

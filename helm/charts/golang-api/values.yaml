@@ -145,7 +145,7 @@ volumes:
       sources:
         - serviceAccountToken:
           path: token
-          expirationSeconds: 3600
+          expirationSeconds: 7200
           audience: rustfs
 
 
