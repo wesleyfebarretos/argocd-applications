@@ -148,7 +148,6 @@ volumes:
             expirationSeconds: 7200
             audience: rustfs
 
-
 volumeMounts:
   - name: rustfs-oidc-token
     mountPath: /var/run/secrets/rustfs
@@ -159,3 +158,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+# Enable ESO secret store for hashicorp vault access
+secretStore:
+  enabled: true
+  provider: vault
