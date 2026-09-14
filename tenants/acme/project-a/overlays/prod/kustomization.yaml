@@ -5,7 +5,7 @@ helmGlobals:
 helmCharts:
   - name: project-a
     releaseName: project-a
-    namespace: acme-project-a-prodd
+    namespace: acme-project-a-prod
     valuesFile: ../../base/values.yaml
     additionalValuesFiles:
       - values.yaml
