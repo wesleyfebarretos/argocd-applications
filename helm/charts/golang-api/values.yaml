@@ -139,19 +139,19 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-# volumes:
-#   - name: rustfs-oidc-token
-#     projected:
-#       sources:
-#         - serviceAccountToken:
-#             path: token
-#             expirationSeconds: 7200
-#             audience: rustfs
+volumes:
+  - name: rustfs-oidc-token
+    projected:
+      sources:
+        - serviceAccountToken:
+            path: token
+            expirationSeconds: 7200
+            audience: rustfs
 
-# volumeMounts:
-#   - name: rustfs-oidc-token
-#     mountPath: /var/run/secrets/rustfs
-#     readOnly: true
+volumeMounts:
+  - name: rustfs-oidc-token
+    mountPath: /var/run/secrets/rustfs
+    readOnly: true
 
 nodeSelector: {}
 
@@ -164,6 +164,3 @@ affinity: {}
 secretStore:
   enabled: true
   provider: vault
-  vault:
-    # required when provider is vault
-    role: ""
