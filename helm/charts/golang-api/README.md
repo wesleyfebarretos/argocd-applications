@@ -41,6 +41,8 @@ A Helm chart for Kubernetes
 | resources.requests.memory | string | `"128Mi"` |  |
 | secretStore.enabled | bool | `true` |  |
 | secretStore.provider | string | `"vault"` |  |
+| secretStore.vault.path | string | `""` |  |
+| secretStore.vault.role | string | `""` |  |
 | securityContext | object | `{}` |  |
 | service.port | int | `8080` |  |
 | service.type | string | `"ClusterIP"` |  |

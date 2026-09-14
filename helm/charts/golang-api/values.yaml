@@ -164,3 +164,8 @@ affinity: {}
 secretStore:
   enabled: true
   provider: vault
+  vault:
+    # Vault role to use for the secret store
+    role: ""
+    # Vault path to use for the secret store
+    path: ""

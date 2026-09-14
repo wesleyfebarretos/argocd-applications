@@ -40,6 +40,9 @@ golang-api:
               path:
                 type: ReplacePrefixMatch
                 replacePrefixMatch: /
+  secretStore:
+    vault:
+      path: "secret/acme/project-a/prod/golang-api"
 cnpg:
   cluster:
     instances: 3
