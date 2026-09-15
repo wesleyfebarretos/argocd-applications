@@ -164,3 +164,6 @@ affinity: {}
 secretStore:
   enabled: true
   provider: vault
+  vault:
+    # required when provider is vault
+    secretBasePath: ""
