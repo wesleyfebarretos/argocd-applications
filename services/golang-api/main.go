@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -28,6 +29,7 @@ func writeError(w http.ResponseWriter, status int, message string) {
 
 func main() {
 	config.Init()
+	fmt.Println(os.Environ())
 	pool, err := database.NewPostgres(context.Background())
 	if err != nil {
 		log.Fatal(err.Error())
