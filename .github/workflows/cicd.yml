@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      force_rebuild_golang_api:
+        description: Force Docker rebuild for golang-api
+        required: false
+        default: false
+        type: boolean
 
 env:
   GOLANGCI_LINT_VERSION: "v2.13.2"
@@ -28,7 +35,7 @@ jobs:
     name: Build golang-api
     needs:
       - changes
-    if: needs.changes.outputs.golang-api-changed == 'true'
+    if: needs.changes.outputs.golang-api-changed == 'true' || inputs.force_rebuild_golang_api == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -67,7 +74,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
         with:
-          images: ghcr.io/${{ github.repository }}
+          images: ghcr.io/${{ github.owner }}/golang-api
           tags: |
             type=sha
             type=raw,value=latest,enable={{is_default_branch}}
