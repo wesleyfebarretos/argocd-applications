@@ -1,0 +1,5 @@
+# $schema=https://raw.githubusercontent.com/google/yamlfmt/main/schema.json
+
+formatter:
+  type: basic
+  retain_line_breaks: true
