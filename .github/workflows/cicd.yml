@@ -74,7 +74,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
         with:
-          images: ghcr.io/${{ github.owner }}/golang-api
+          images: ghcr.io/${{ github.repository }}/golang-api
           tags: |
             type=sha
             type=raw,value=latest,enable={{is_default_branch}}
