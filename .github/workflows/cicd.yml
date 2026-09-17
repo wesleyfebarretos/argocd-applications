@@ -23,6 +23,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
       - name: Check for changes
         uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
         id: filter
@@ -31,15 +32,11 @@ jobs:
             golang-api-changed:
               - 'services/golang-api/**'
 
-  golang-api-build:
-    name: Build golang-api
-    needs:
-      - changes
-    if: needs.changes.outputs.golang-api-changed == 'true' || inputs.force_rebuild_golang_api == 'true'
+  go-linters:
+    name: Run linters
+    needs: changes
+    if: needs.changes.outputs.golang-api-changed == 'true'
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -62,6 +59,20 @@ jobs:
         run: |
           go mod tidy
           git diff --exit-code -- go.mod go.sum
+
+  golang-api-build:
+    name: Build golang-api
+    needs:
+      - changes
+      - go-linters
+    if: needs.changes.outputs.golang-api-changed == 'true' || inputs.force_rebuild_golang_api == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
