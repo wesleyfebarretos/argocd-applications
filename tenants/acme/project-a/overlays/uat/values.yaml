@@ -4,4 +4,4 @@ golang-api:
   image:
     tag: latest
   podLabels:
-    environment: stg
+    environment: uat

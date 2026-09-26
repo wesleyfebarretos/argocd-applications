@@ -11,5 +11,5 @@ helmCharts:
 labels:
   - pairs:
       app.kubernetes.io/part-of: project-a
-      environment: stg
+      environment: uat
       tenant: acme
