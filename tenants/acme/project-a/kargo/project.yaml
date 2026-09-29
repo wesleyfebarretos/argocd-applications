@@ -1,0 +1,8 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Project
+metadata:
+  name: acme-project-a
+  labels:
+    tenant: acme
+    project: project-a
+    environment: shared
