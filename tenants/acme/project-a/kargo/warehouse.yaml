@@ -4,7 +4,7 @@ metadata:
   name: golang-api
 spec:
   subscriptions:
-    - name: golang-api
-      image:
-        repoURL: ghcr.io/wesleyfebarretos/argocd-applications/golang-api
-        imageSelectionStrategy: NewestBuild
+  - name: golang-api
+    image:
+      repoURL: ghcr.io/wesleyfebarretos/argocd-applications/golang-api
+      imageSelectionStrategy: NewestBuild
