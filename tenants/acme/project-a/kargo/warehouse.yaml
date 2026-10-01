@@ -1,0 +1,10 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: golang-api
+spec:
+  subscriptions:
+  - name: golang-api
+    image:
+      repoURL: ghcr.io/wesleyfebarretos/argocd-applications/golang-api
+      imageSelectionStrategy: NewestBuild
